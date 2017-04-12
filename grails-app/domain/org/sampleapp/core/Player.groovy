@@ -1,27 +1,17 @@
 package org.sampleapp.core
 
+import org.grails.datastore.gorm.neo4j.GraphPersistentEntity
+
 class Player extends AbstractGraphDomain {
 
-    Application __app__
-    String __appName__
+    String name
+//    Application application
+//    Club club
 
-    static transients = ['__app__']
-
-    Application get__app__() {
-        if (!__app__ && __appName__) {
-            __app__ = Application.findByName(__appName__)
-        }
-        return __app__
-    }
-    
-    void set__app__(Application application) {
-        if (application) {
-            this.__appName__ = application.name
-            this.__app__ = application
-        }
-        else {
-            this.__appName__ = null
-            this.__app__ = null
+    static mapping = {
+        dynamicAssociations true
+        labels "__Player__", { GraphPersistentEntity pe, Player instance ->
+            "Player__${instance.name}"
         }
     }
 

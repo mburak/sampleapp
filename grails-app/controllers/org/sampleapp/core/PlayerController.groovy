@@ -37,4 +37,12 @@ class PlayerController {
         respond([player: player])
     }
 
+    def updatePlayer3() {
+        Player player = Player.findByName("player1")
+
+        String app = player.getParentAppName()
+
+        respond([player: player])
+    }
+
 }

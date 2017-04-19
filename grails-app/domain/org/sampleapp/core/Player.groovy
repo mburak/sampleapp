@@ -16,4 +16,11 @@ class Player extends AbstractGraphDomain {
 //        }
     }
 
+    String getParentAppName() {
+        if (application?.parent) {
+            return application.parent.name
+        }
+
+        return null
+    }
 }

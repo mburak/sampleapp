@@ -1,4 +1,4 @@
-package core
+package org.sampleapp.core
 
 import grails.transaction.Transactional
 
@@ -20,4 +20,21 @@ class PlayerController {
 
         respond([player: player])
     }
+
+    def updatePlayer2() {
+        Player player = Player.findByName("player1")
+
+        Club club1 = Club.findByName("club1")
+        Club club2 = Club.findByName("club2")
+
+        if (player.clubs == null) {
+            player.clubs = [club1, club2]
+        }
+
+        player.club = club2
+        player.save()
+
+        respond([player: player])
+    }
+
 }

@@ -1,8 +1,5 @@
 package org.sampleapp.core
 
-import core.Club
-import core.Player
-
 import grails.transaction.Transactional
 
 @Transactional

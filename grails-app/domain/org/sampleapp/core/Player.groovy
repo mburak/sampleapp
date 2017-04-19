@@ -1,6 +1,5 @@
-package core
+package org.sampleapp.core
 
-import org.grails.datastore.gorm.neo4j.GraphPersistentEntity
 import org.sampleapp.core.AbstractGraphDomain
 import org.sampleapp.core.Application
 

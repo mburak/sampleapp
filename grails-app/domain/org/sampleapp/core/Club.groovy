@@ -8,9 +8,9 @@ class Club extends AbstractGraphDomain {
 
     static mapping = {
         dynamicAssociations true
-        labels "__Club__", { GraphPersistentEntity pe, Club instance ->
-            "Club__${instance.name}"
-        }
+//        labels "__Club__", { GraphPersistentEntity pe, Club instance ->
+//            "Club__${instance.name}"
+//        }
     }
 
 }

@@ -1,3 +1,3 @@
-//grails.neo4j.default.mapping = {
-//    id generator: 'snowflake'
-//}
+grails.neo4j.default.mapping = {
+    id generator: 'snowflake'
+}

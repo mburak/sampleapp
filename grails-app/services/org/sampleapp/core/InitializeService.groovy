@@ -27,12 +27,12 @@ class InitializeService {
             Player player = new Player(name: "player1", __appName__: "app1")
             player.application = application
             player.formerClubs = [club3, club4]
-            player.club = club
+//            player.club = club
             player.save()
 
             player.discard()
-            player = Player.findByName("player1")
-            log.debug("Player's club is ${player.club}")
+            def aplayer = Player.findByName("player1")
+//            log.debug("Player's club is ${aplayer.club}")
         }
     }
 }

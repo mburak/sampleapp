@@ -24,10 +24,14 @@ class InitializeService {
             Club club4 = new Club(name: "club4")
             club4.save()
 
+            Club club5 = new Club(name: "club5")
+            club4.save()
+
             Player player = new Player(name: "player1", __appName__: "app1")
             player.application = application
             player.formerClubs = [club3, club4]
-//            player.club = club
+            player.clubs = [club2, club5]
+            player.club = club
             player.save()
 
             player.discard()

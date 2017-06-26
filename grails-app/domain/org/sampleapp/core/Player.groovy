@@ -7,6 +7,9 @@ class Player extends AbstractGraphDomain {
     String name
     Application application
 //    Club club
+
+    List<Club> formerClubs = []
+
     static hasMany = [formerClubs: Club]
 
     static mapping = {
@@ -15,6 +18,7 @@ class Player extends AbstractGraphDomain {
 //            "Player__${instance.name}"
 //        }
         application lazy: false
+        formerClubs lazy: false, fetch: "eager"
     }
 
     String getParentAppName() {

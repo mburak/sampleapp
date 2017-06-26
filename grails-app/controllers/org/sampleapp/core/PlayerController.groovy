@@ -1,10 +1,13 @@
 package org.sampleapp.core
 
+import grails.transaction.Transactional
+
+@Transactional
 class PlayerController {
 
     static responseFormats = ["json"]
 
-       static allowedMethods = [save: "POST", update: "PUT", patch: "PATCH", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT", patch: "PATCH", delete: "DELETE"]
 
     def updatePlayer() {
         Player player = Player.findByName("player1")
@@ -54,6 +57,17 @@ class PlayerController {
         Player player = Player.find("MATCH (n:Player) WHERE n.name = {name} RETURN n", params)
 
         assert player.id != player.application.id
+
+        respond([player: player])
+    }
+
+    def updatePlayer4() {
+        Player player = Player.findByName("player1")
+
+        Club club2 = Club.findByName("club2")
+        player.formerClubs << club2
+
+        player.save()
 
         respond([player: player])
     }
